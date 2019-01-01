@@ -1,0 +1,499 @@
+PMID = 3
+OSID = 1
+BDID = 3
+
+
+I2C1:
+	SMFG res. templ: I2C 0x55
+	OperationRegion(DVFG, GenericSerialBus, 0, 0x100):
+		Fields (2-bytes):
+			0x05	FG05
+			0x10	FG10
+			0x17	FG17
+			0x18	FG18
+			0x09	FG09
+			0x0A	FG0A
+			0x11	FG11
+			0x00	FG00
+			0x03	FG03
+			0x1D	FG1D
+			0x2B	FG2B
+			0x08	THRM
+			0x06	SOCR
+			0x1C	MXCU
+
+	SMBC: res. templ: I2C 0x55
+	OperationRegion (DVBC, GenericSerialBus, Zero, 0x0100)
+		Fields (1-byte): 
+			0x00..0x10	BC0..BC10
+			0x3D		BC3D
+			0x31		BC31
+			0x3C		BC3C
+			0x3E		BC3E
+			0x35		BC35
+
+	
+			
+
+INT33FE: PMIC
+	I2C7: 0x5E
+	I2C1: 0x55
+
+	GpioInt: Edge, ActiveBoth, PullNone, "\\_SB.PCI0.I2C7.PMI5", Pin list: 0x12
+
+	Method USBH(Arg0) {
+		switch (Arg0) {
+		case 1:
+			PMIC(0x5e07) |= 1;
+			CDRH(0);
+			PMIC(0x5e17) |= 0x40
+		case 2:
+			ADBG ("CDP/SDP");
+			PMIC(0x5e07) |= 1;
+			CDRD(1);
+		case 3:
+			PMIC(0x5e07) |= 1;
+			CDRH(0);
+		default:
+			ADBG ("DCP/no cable is connected");
+			PMIC(0x5e07) &= 0xFE;
+			CDRD(0);
+		}
+		BQ25892(0x07) &= 0xCF // disable watchdog
+	}
+
+
+INT34D3: PMIC
+	I2C7: 0x4f
+	I2C7: 0x5e
+	I2C7: 0x6e 
+	GpioInt: Level, ActiveHigh, PullDefault, "\\_SB.GPO1", Pin list: 0x0f
+
+
+	Управление светодиодом (пиктограмма стилуса):
+		гаснет:
+			0x4 0xe0 [2:1] = 0
+		горит:
+			0x4F 0xE0, биты 2 и 1 = 0x02
+			0x4F 0xDF, бит 0 = 1
+		плавно мерцает:
+			0x4F 0xE0 [2:1] = 0x06
+			0x4F 0xDF [5:4, 0] = 0x11
+		моргает:
+			0x4F 0xE0 [2:1] = 0x04
+			0x4F 0xDF [5:4, 0] = 0x31
+
+		0x4fe0:
+			2:1	режим, 0 — выкл., 1 горит, 2 - мигает, 3 — мерцает, 
+		0x4fdf:
+			5:4	частота мигания
+			3:1	что-то про яркость
+			0	1 - вкл, 0 — выкл
+			
+
+
+	// from Android sources
+	.gpadcreq       =       0x4F02,
+        .adc1cntl       =       0x4F05,
+	.thrmmonctl     =       0x4F1E,
+	.batthermonctl =        0x4F1F,
+	.vbatmonctl     =       0x4F20,
+	.gpmonctl       =       0x4F21,
+#define WC_THRMBATZONE_ADDR	0x4F22
+
+struct gpadc_regmap_t {
+        char *name;
+        int cntl;       /* GPADC Conversion Control Bit indicator */
+        int irq_en;     /* GPADC IRQ bit indicator */
+        int rslth;      /* GPADC Conversion Result Register Addr High */
+        int rsltl;      /* GPADC Conversion Result Register Addr Low */
+        int alrt_min_h;
+        int alrt_min_l;
+        int alrt_max_h;
+        int alrt_max_l;
+};
+
+
+static struct gpadc_regmap_t whiskeycove_gpadc_regmaps[GPADC_NUM_CHANNELS] = {
+        {"VBAT",        5, 0,   0x4F03, 0x4F04, 0xFF, 0xFF, 0xFF, 0xFF},
+        {"BATID",       4, 1,   0x4F06, 0x4F07, 0xFF, 0xFF, 0xFF, 0xFF},
+        {"PMICTEMP",    3, 2,   0x4F42, 0x4F43, 0x4F33, 0x4F34, 0x4F33, 0x4F34},
+        {"BATTEMP0",    2, 3,   0x4F15, 0x4F16, 0xFF, 0xFF, 0xFF, 0xFF},
+        {"BATTEMP1",    2, 3,   0x4F17, 0x4F18, 0xFF, 0xFF, 0xFF, 0xFF},
+        {"SYSTEMP0",    3, 2,   0x4F38, 0x4F39, 0x4F23, 0x4F24, 0x4F25, 0x4F26},
+        {"SYSTEMP1",    3, 2,   0x4F3A, 0x4F3B, 0x4F27, 0x4F28, 0x4F29, 0x4F2A},
+        {"SYSTEMP2",    3, 2,   0x4F3C, 0x4F3D, 0x4F2B, 0x4F2C, 0x4F2D, 0x4F2E},
+        {"USBID",       1, 5,   0x4F08, 0x4F09, 0xFF, 0xFF, 0xFF, 0xFF},
+        {"PEAK",        7, 6,   0x4F13, 0x4F14, 0xFF, 0xFF, 0xFF, 0xFF},
+        {"AGND",        6, 4,   0x4F0A, 0x4F0B, 0xFF, 0xFF, 0xFF, 0xFF},
+        {"VREF",        6, 4,   0x4F0A, 0x4F0B, 0xFF, 0xFF, 0xFF, 0xFF},
+};
+
+#define WC_THRMZN0H_ADDR	0x4F44
+#define WC_THRMZN0L_ADDR	0x4F45
+#define WC_THRMZN1H_ADDR	0x4F46
+#define WC_THRMZN1L_ADDR	0x4F47
+#define WC_THRMZN2H_ADDR	0x4F48
+#define WC_THRMZN2L_ADDR	0x4F49
+#define WC_THRMZN3H_ADDR	0x4F4A
+#define WC_THRMZN3L_ADDR	0x4F4B
+#define WC_THRMZN4H_ADDR	0x4F4C
+#define WC_THRMZN4L_ADDR	0x4F4D
+
+
+
+	/* 6e – device address */
+	CHT_WC_IRQLVL1          	0x6e02
+	CHT_WC_PWRSRC_IRQ               0x6e03
+	CHT_WC_IRQLVL1_MASK     	0x6e0e
+	CHT_WC_PWRSRC_IRQ_MASK          0x6e0f
+	CHT_WC_EXTCHGRIRQ               0x6e0a
+	.adcirq         =       	0x6E08,
+        .madcirq        =       	0x6E15,
+
+#define WC_THRMIRQ0_ADDR	0x6E04
+#define WC_MTHRMIRQ0_ADDR	0x6E0D
+#define WC_STHRMIRQ0_ADDR	0x4F19
+
+#define WC_THRMIRQ1_ADDR	0x6E05
+#define WC_MTHRMIRQ1_ADDR	0x6E12
+#define WC_STHRMIRQ1_ADDR	0x4F1A
+
+#define WC_THRMIRQ2_ADDR	0x6E06
+#define WC_MTHRMIRQ2_ADDR	0x6E13
+#define WC_STHRMIRQ2_ADDR	0x4F1B
+
+
+	CHT_WC_EXTCHGRIRQ_MSK           0x6e17
+	CHT_WC_PWRSRC_STS               0x6e1e
+	CHT_WC_VBUS_GPIO_CTLO           0x6e2d
+
+#define WC_WAKESRC_ADDR		0x6E22
+
+#define WC_LOWBATTDET0_ADDR	0x6E23
+#define WC_LOWBATTDET1_ADDR	0x6E24
+#define WC_BATTDETCTRL_ADDR	0x6EF0
+#define WC_VDCINDETCTRL_ADDR	0x6E25
+#define WC_MCHGRIRQ0_ADDR	0x6E17
+
+	CHT_WC_V1P05A_CTRL		0x6e3b
+	CHT_WC_V1P15_CTRL		0x6e3c
+	CHT_WC_V1P05A_VSEL		0x6e3d
+	CHT_WC_V1P15_VSEL		0x6e3e
+	CHT_WC_V1P8A_CTRL		0x6e56
+	CHT_WC_V1P8SX_CTRL		0x6e57
+	CHT_WC_VDDQ_CTRL		0x6e58
+	CHT_WC_V1P2A_CTRL		0x6e59
+	CHT_WC_V1P2SX_CTRL		0x6e5a
+	CHT_WC_V1P8A_VSEL		0x6e5b
+	CHT_WC_VDDQ_VSEL		0x6e5c
+	CHT_WC_V2P8SX_CTRL		0x6e5d
+	CHT_WC_V3P3A_CTRL		0x6e5e
+	CHT_WC_V3P3SD_CTRL		0x6e5f
+	CHT_WC_VSDIO_CTRL		0x6e67
+	CHT_WC_V3P3A_VSEL		0x6e68
+	CHT_WC_VPROG1A_CTRL		0x6e90
+	CHT_WC_VPROG1B_CTRL		0x6e91
+	CHT_WC_VPROG1F_CTRL		0x6e95
+	CHT_WC_VPROG2D_CTRL		0x6e99
+	CHT_WC_VPROG3A_CTRL		0x6e9a
+	CHT_WC_VPROG3B_CTRL		0x6e9b
+	CHT_WC_VPROG4A_CTRL		0x6e9c
+	CHT_WC_VPROG4B_CTRL		0x6e9d
+	CHT_WC_VPROG4C_CTRL		0x6e9e
+	CHT_WC_VPROG4D_CTRL		0x6e9f
+	CHT_WC_VPROG5A_CTRL		0x6ea0
+	CHT_WC_VPROG5B_CTRL		0x6ea1
+	CHT_WC_VPROG6A_CTRL		0x6ea2
+	CHT_WC_VPROG6B_CTRL		0x6ea3
+	CHT_WC_VPROG1A_VSEL		0x6ec0
+	CHT_WC_VPROG1B_VSEL		0x6ec1
+	CHT_WC_V1P8SX_VSEL		0x6ec2
+	CHT_WC_V1P2SX_VSEL		0x6ec3
+	CHT_WC_V1P2A_VSEL		0x6ec4
+	CHT_WC_VPROG1F_VSEL		0x6ec5
+	CHT_WC_VSDIO_VSEL		0x6ec6
+	CHT_WC_V2P8SX_VSEL		0x6ec7
+	CHT_WC_V3P3SD_VSEL		0x6ec8
+	CHT_WC_VPROG2D_VSEL		0x6ec9
+	CHT_WC_VPROG3A_VSEL		0x6eca
+	CHT_WC_VPROG3B_VSEL		0x6ecb
+	CHT_WC_VPROG4A_VSEL		0x6ecc
+	CHT_WC_VPROG4B_VSEL		0x6ecd
+	CHT_WC_VPROG4C_VSEL		0x6ece
+	CHT_WC_VPROG4D_VSEL		0x6ecf
+	CHT_WC_VPROG5A_VSEL		0x6ed0
+	CHT_WC_VPROG5B_VSEL		0x6ed1
+	CHT_WC_VPROG6A_VSEL		0x6ed2
+	CHT_WC_VPROG6B_VSEL		0x6ed3
+
+#define WC_WAKESRC2_ADDR	0x6EE5
+
+	CHT_WC_PHYCTRL                  0x5e07
+	CHT_WC_CHGRCTRL0                0x5e16
+	CHT_WC_CHGRCTRL1                0x5e17
+
+#define WC_CHGRCTRL0_ADDR	0x5E16
+#define WC_CHGRCTRL1_ADDR	0x5E17
+#define WC_CHGRCTRL2_ADDR	0x5E18
+#define WC_CHGRSTATUS_ADDR	0x5E19
+#define WC_SCHGRIRQ0_ADDR	0x5E1A
+#define WC_CHGDISCTRL_ADDR	0x5E2F
+
+#define WC_VBUSDETCTRL_ADDR	0x5E1D
+#define WC_USBPATH_ADDR		0x5E19
+#define WC_USBPHYCTRL_ADDR	0x5E07
+#define WC_USBIDCTRL_ADDR	0x5E05
+#define WC_USBIDEN_MASK		0x01
+#define WC_USBIDSTAT_ADDR	0x00FF
+#define WC_USBSRCDETSTATUS_ADDR	0x5E29
+
+#define WC_CHRTTADDR_ADDR	0x5E22
+#define WC_CHRTTDATA_ADDR	0x5E23
+
+	CHT_WC_I2C_CTRL                 0x5e24
+	CHT_WC_I2C_CLIENT_ADDR          0x5e25
+	CHT_WC_I2C_REG_OFFSET           0x5e26
+	CHT_WC_I2C_WRDATA               0x5e27
+	CHT_WC_I2C_RDDATA               0x5e28
+
+	CHT_WC_USBSRC                   0x5e29
+
+#define WC_DBGUSBBC1_ADDR	0x5FE0
+#define WC_DBGUSBBC2_ADDR	0x5FE1
+#define WC_DBGUSBBCSTAT_ADDR	0x5FE2
+
+
+	GPIOs connections (all outputs):
+		GPIO	pin	
+		GMP0	0x20
+		GX00	0x21
+		GX01	0x22
+		GMP1	0x23
+		GX10	0x24
+		GX11	0x25
+		GMP2	0x26
+		GX20	0x27
+		GX21	0x28
+		GMP3	0x29
+		GX30	0x2A
+		GX31	0x2B
+		GMP4	0x2C
+		GX40	0x2D
+		GX41	0x2E
+		GMP5	0x2F
+		GX50	0x30
+		GX51	0x31
+		GEN0	0x32
+		GEN1	0x33
+		GEN2	0x34
+		GEN3	0x35
+		GEN4	0x36
+		GEN5	0x37
+		G18A	0x40
+		G18X	0x41
+		GDDQ	0x42
+		G12A	0x43
+		G12X	0x44
+		G28X	0x45
+		G33A	0x46
+		G3SD	0x47
+		GSD	0x48
+		GSW2	0x49
+		GSW1	0x4A
+		GUPY	0x4B
+		GRS0	0x4C
+		GP1A	0x4D
+		GP1B	0x4E
+		GP1F	0x4F
+		GP2D	0x50
+		GP3A	0x51
+		GP3B	0x52
+		GP4A	0x53
+		GP4B	0x54
+		GP4C	0x55
+		GP4D	0x56
+		GP5A	0x57
+		GP5B	0x58
+		GP6A	0x59
+		GP6B	0x5A
+		GP7A	0x5B
+		MOXX	0x5D
+		GPRW	0x5F
+		G1P1	0x09
+	
+
+	Method EOTG() {
+		ADBG ("PH2")
+		// CHGRCTRL1_OTGMODE_MASK bit
+		// Если не убрать OTGMODE, то тип адаптера не распознаётся
+		PMIC(0x5e17) |= 0x40
+		BQ25892(0x07) &= 0xCF // disable watchdog
+		ADBG(BQ25892(0x07))
+		BQ25892(0x03) &= 0xEF // disable charge
+		BQ25892(0x03) |= 0x20 // enable OTG
+
+		tmp = BQ25892(0x08)
+		tmp >>= 6
+		if (tmp == 1)
+			ADBG ("USB Host")
+		else if (tmp==3)
+			ADBG ("REG08 St OTG")
+	}
+
+
+
+OTG1:
+	Method SMBC(Arg0, Arg1) {
+		BUFF[3] = {0x00, 0x01, 0x00};
+		DATA = &BUF[2];
+		BYAT = &BUF[0];
+		
+		switch(Arg0) {
+		case 0:
+			DATA = 0x50;
+			^^I2C1.BC00 = BUFF;
+		case 1:
+			DATA = 0x51;
+			^^I2C1.BC00 = BUFF;
+		}
+
+		BUFF = ^^I2C1.BC01;
+		DATA &= 0xFD;
+		^^I2C1.BC01 = BUFF
+
+		switch (Arg1) {
+		case 0:
+			BUFF = ^^I2C1.BC31;
+			DATA &= 0xFB;
+			^^I2C1.BC31 = BUFF;
+		case 1:
+			BUFF = ^^I2C1.BC31;
+			DATA |= 0x04;
+			^^I2C1.BC31 = BUFF;
+		}
+	}
+
+	Method TIBC(Arg0, Arg1)
+		switch (Arg0) {
+		case 0:
+			Set BQ25892 regs:
+				0x02	0x42
+				0x05	0x8A
+				0x00	0x38
+				0x01	0x3B
+		case 1:
+			Set BQ25892 regs:
+				0x02	0x42
+				0x05	0x8A
+				0x00	0x39
+				0x01	0x3B
+		case 2:
+			Set BQ25892 regs:
+				0x02	0x42
+				0x05	0x8A
+				0x00	0x3A
+				0x01	0x3B
+		case 3:
+			Set BQ25892 regs:
+				0x02	0x42
+				0x05	0x8A
+				0x00	0x3B
+				0x01	0x3B
+
+	
+	Method _DSM(Arg0..Arg4)
+		if (Arg0 == "eaa3afa9-6469-4015-9041-a83634a7fa2d") {
+			return Arg2; //0 or 1
+		}
+
+		if (Arg0 == "e2528aa0-8863-48f4-aa40-865e05902449") {
+			Local0 = ^^I2C1.BATC.PSRC()
+			if (Arg2 == 0)
+				return 0;
+		
+			if (Arg2 == 1) {
+				switch (Local0) {
+				case 1:
+					return 3;
+				case 2:
+					return 0;
+				case 3:
+					return 2;
+				case 4:
+					return 1;
+				case 5:
+					return 4;
+				case 0:
+					return 5;
+				}
+		}
+		if (Arg0 == "b2090db6-9135-4ef6-bd18-d5590dda90be") {
+			BUFF[3] = {0x00, 0x01, 0x00};
+			DATA = &BUF[2];
+			BYAT = &BUF[0];
+
+			switch (Arg2) {
+			case 1:
+				SMBC(0, 0);
+			case 2:
+				SMBC(0, 0);
+			case 3:
+				SMBC(0, 1);
+			case 4:
+				SMBC(1, 1);
+			case 5:
+				BUFF = ^^I2C1.BC30;
+				Local0 = DATA /* \_SB_.PCI0.OTG1._DSM.DATA */
+				Local1 = (Local0 & 0xFF)
+				DATA = (Local1 | 0x04)
+				^^I2C1.BC30 = BUFF
+				Return (BYAT) /* \_SB_.PCI0.OTG1._DSM.BYAT */
+			}
+		}
+
+
+
+
+
+
+
+\_SB_.MBTN._WDG (1 of 3)
+  GUID: 742B0CA1-0B20-404B-9CAA-AEFCABF30CE0
+  WMI Method:
+    Flags          : 0x02 (Method)
+    Object ID      : BB
+    Instance       : 0x01
+PASSED: Test 1, 742B0CA1-0B20-404B-9CAA-AEFCABF30CE0 has associated method \_SB_.MBTN.WMBB
+
+
+Device \_SB_.MBTN:
+	Method WMBB(Arg0, Arg1, Arg2):
+		switch (Arg1) {
+		case 2:
+			Local0 = ^^TOFF.ISPO;
+			if (Local0 == 0x08) {
+				WRCM (0x70, 0x08);
+				^^TOFF.ISPO = 0x08;
+			} else {
+				PMIC(0x4FDF) &= 0xFE;
+			}
+
+			if (^^GPO0.AVBL == One)
+				^^GPO0.TCD6 = 0;
+
+		case 1:
+			PMIC(0x4FE0) &= 0xF9;
+			PMIC(0x4FE0) |= 0x02;
+			PMIC(0x4FDF) |= 0x01;
+
+			if (^^GPO0.AVBL == One)
+				^^GPO0.TCD6 = 1;
+
+		case 3:
+			PMIC(0x4FE0) &= 0xF9;
+			PMIC(0x4FE0) |= 0x02;
+			PMIC(0x4FDF) &= 0xCF;
+			PMIC(0x4FDF) |= 1;
+		}
+

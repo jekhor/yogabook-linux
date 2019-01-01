@@ -1,0 +1,100 @@
+00:00.0 Host bridge: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series SoC Transaction Register (rev 34)
+	Subsystem: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series SoC Transaction Register
+	Flags: bus master, fast devsel, latency 0
+	Kernel driver in use: iosf_mbi_pci
+
+00:02.0 VGA compatible controller: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series PCI Configuration Registers (rev 34) (prog-if 00 [VGA controller])
+	Subsystem: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series PCI Configuration Registers
+	Flags: bus master, fast devsel, latency 0, IRQ 134
+	Memory at 90000000 (64-bit, non-prefetchable) [size=16M]
+	Memory at 80000000 (64-bit, prefetchable) [size=256M]
+	I/O ports at 1000 [size=64]
+	[virtual] Expansion ROM at 000c0000 [disabled] [size=128K]
+	Capabilities: [d0] Power Management version 2
+	Capabilities: [90] MSI: Enable+ Count=1/1 Maskable- 64bit-
+	Capabilities: [b0] Vendor Specific Information: Len=07 <?>
+	Kernel driver in use: i915
+	Kernel modules: i915
+
+00:03.0 Multimedia controller: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series Imaging Unit (rev 34)
+	Subsystem: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series Imaging Unit
+	Flags: bus master, fast devsel, latency 0, IRQ 255
+	Memory at 91800000 (32-bit, non-prefetchable) [size=4M]
+	Capabilities: [80] Power Management version 2
+	Capabilities: [90] MSI: Enable- Count=1/1 Maskable- 64bit-
+
+00:0a.0 Non-VGA unclassified device: Intel Corporation Device 22d8 (rev 34)
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, fast devsel, latency 0, IRQ 20
+	Memory at 91d3c000 (32-bit, non-prefetchable) [size=4K]
+	Capabilities: [80] Power Management version 3
+	Kernel driver in use: intel_ish_ipc
+	Kernel modules: intel_ish_ipc
+
+00:0b.0 Signal processing controller: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series Power Management Controller (rev 34)
+	Subsystem: Device 7270:8086
+	Flags: bus master, fast devsel, latency 0, IRQ 128
+	Memory at 91d18000 (64-bit, non-prefetchable) [size=4K]
+	Capabilities: [40] MSI: Enable+ Count=1/1 Maskable- 64bit-
+	Capabilities: [50] Power Management version 3
+	Kernel driver in use: proc_thermal
+	Kernel modules: processor_thermal_device
+
+00:14.0 USB controller: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series USB xHCI Controller (rev 34) (prog-if 30 [XHCI])
+	Subsystem: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series USB xHCI Controller
+	Flags: bus master, medium devsel, latency 0, IRQ 119
+	Memory at 91d00000 (64-bit, non-prefetchable) [size=64K]
+	Capabilities: [70] Power Management version 2
+	Capabilities: [80] MSI: Enable+ Count=1/8 Maskable- 64bit+
+	Kernel driver in use: xhci_hcd
+
+00:1a.0 Encryption controller: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series Trusted Execution Engine (rev 34)
+	Subsystem: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series Trusted Execution Engine
+	Flags: bus master, fast devsel, latency 0, IRQ 129
+	Memory at 91c00000 (32-bit, non-prefetchable) [size=1M]
+	Memory at 91500000 (32-bit, non-prefetchable) [size=1M]
+	Capabilities: [80] Power Management version 3
+	Capabilities: [a0] MSI: Enable+ Count=1/1 Maskable- 64bit-
+	Kernel driver in use: mei_txe
+	Kernel modules: mei_txe
+
+00:1c.0 PCI bridge: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series PCI Express Port #1 (rev 34) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 115
+	Bus: primary=00, secondary=01, subordinate=01, sec-latency=0
+	I/O behind bridge: None
+	Memory behind bridge: 91000000-914fffff [size=5M]
+	Prefetchable memory behind bridge: None
+	Capabilities: [40] Express Root Port (Slot+), MSI 00
+	Capabilities: [80] MSI: Enable+ Count=1/1 Maskable- 64bit-
+	Capabilities: [90] Subsystem: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series PCI Express Port
+	Capabilities: [a0] Power Management version 3
+	Capabilities: [100] #00
+	Capabilities: [200] L1 PM Substates
+	Kernel driver in use: pcieport
+	Kernel modules: shpchp
+
+00:1f.0 ISA bridge: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series PCU (rev 34)
+	Subsystem: Intel Corporation Atom/Celeron/Pentium Processor x5-E8000/J3xxx/N3xxx Series PCU
+	Flags: bus master, medium devsel, latency 0
+	Capabilities: [e0] Vendor Specific Information: Len=0c <?>
+	Kernel driver in use: lpc_ich
+	Kernel modules: lpc_ich
+
+01:00.0 Network controller: Broadcom Limited BCM4356 802.11ac Wireless Network Adapter (rev 02)
+	Subsystem: Lenovo BCM4356 802.11ac Wireless Network Adapter
+	Flags: fast devsel, IRQ 16
+	Memory at 91400000 (64-bit, non-prefetchable) [size=32K]
+	Memory at 91000000 (64-bit, non-prefetchable) [size=4M]
+	Capabilities: [48] Power Management version 3
+	Capabilities: [58] MSI: Enable- Count=1/16 Maskable- 64bit+
+	Capabilities: [68] Vendor Specific Information: Len=44 <?>
+	Capabilities: [ac] Express Endpoint, MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [13c] Device Serial Number 00-00-38-ff-ff-00-38-0f
+	Capabilities: [150] Power Budgeting <?>
+	Capabilities: [160] Virtual Channel
+	Capabilities: [1b0] Latency Tolerance Reporting
+	Capabilities: [220] #15
+	Capabilities: [240] L1 PM Substates
+	Kernel modules: brcmfmac
+

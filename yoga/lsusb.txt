@@ -1,0 +1,7 @@
+Bus 001 Device 010: ID 046d:c534 Logitech, Inc. Unifying Receiver
+Bus 001 Device 009: ID 1a2c:2c27 China Resource Semico Co., Ltd 
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 007: ID 14cd:1212 Super Top microSD card reader (SY-T18)
+Bus 001 Device 008: ID 13fe:3600 Kingston Technology Company Inc. flash drive (4GB, EMTEC)
+Bus 001 Device 006: ID 14cd:8601 Super Top 4-Port hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub

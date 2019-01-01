@@ -1,0 +1,18 @@
+#ifndef _WMI-TOFF_h_
+#define _WMI-TOFF_h_
+
+// Lenovo_Toff - Lenovo_Toff
+// Lenovo Toff class
+#define Lenovo_ToffGuid \
+    { 0x76dc1645,0xa968,0x42d4, { 0x9b,0xb2,0x98,0x2f,0x2a,0x6f,0x73,0x3f } }
+
+#if ! (defined(MIDL_PASS))
+DEFINE_GUID(Lenovo_Toff_GUID, \
+            0x76dc1645,0xa968,0x42d4,0x9b,0xb2,0x98,0x2f,0x2a,0x6f,0x73,0x3f);
+#endif
+
+//
+// Method id definitions for Lenovo_Toff
+#define Toff     1
+
+#endif
