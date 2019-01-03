@@ -1,0 +1,7 @@
+video=efifb:width:1200,stride:1200,height:1920 fbcon=rotate:1 random.trust_cpu=1
+
+# video=efifb:width:1200,stride:1200,height:1920 – autodetection of FB
+  geometry fails, set explicitly
+# fbcon=rotate:1 – rotate console for 90 degrees
+# random.trust_cpu=1 – allow to use RDRAND instruction to initialize entropy
+  pool (faster Wi-Fi start)
