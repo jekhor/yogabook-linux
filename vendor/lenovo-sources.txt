@@ -1,0 +1,2 @@
+Lenovo's sources for kernel & Android system:
+https://download.lenovo.com/consumer/mobiles/lenovo_yb1_x90f_l_osc_201803.7z
