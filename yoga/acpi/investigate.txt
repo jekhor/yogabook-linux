@@ -33,6 +33,11 @@ I2C1:
 			0x35		BC35
 
 	
+Methods CDRD/CDRH: black magick with mailbox, semantics:
+	CDRD(0): USB device mode, only charging?
+	CDRD(1): USB device mode, data connection?
+	CDRH(0): USB host mode, with VBUS supply?
+	CDRH(1): USB host mode, without VBUS supply?
 			
 
 INT33FE: PMIC
@@ -339,6 +344,55 @@ static struct gpadc_regmap_t whiskeycove_gpadc_regmaps[GPADC_NUM_CHANNELS] = {
 			ADBG ("USB Host")
 		else if (tmp==3)
 			ADBG ("REG08 St OTG")
+	}
+
+	
+	// USB ID IRQ
+	Method _E1F() {
+		Local0 = (PMIC(0x6e1e) >> 3) & 0x03;
+		switch (Local0) {
+		case: 0: // ID ACA – enable OTG host with external supply
+			ADBG("RID ACA");
+			CDRH(0);
+			ADBG("PH1");
+		case 1: // ID GND - enable OTG Host mode
+			ADBG("RID_GND");
+			BQ25892(0x0a) &= 0xF8;
+			BQ25892(0x0a) |= 0x07; //Boost mode cur. limit 2.45 A
+
+			PMIC(0x5e07) |= 1;
+
+			CDRH(0);
+			ADBG("PH1");
+			EOTG();
+
+			Sleep(0x07d0); // 2-seconds delay
+
+			BQ25892(0x0a) &= 0xF8;
+			BQ25892(0x0a) |= 0x03; //Boost mode cur. limit 1.4 A
+		case 2: // ID Float – disable OTG host, enable charging
+			Sleep(0x3000); // 12.2 s
+
+			// Re-check USB ID after 12.2 s.
+			Local0 = (PMIC(0x6e1e) >> 3) & 0x03;
+			if (Local0) {
+				PMIC(0x5e07) &= 0xFE;
+				BQ25892(0x03) |= 0x10; // Enable charging
+				BQ25892(0x03) &= 0xDF; // Disable VBUS boost
+
+				PMIC(0x5e17) &= 0xBF; // Disable OTG mode
+			} else {
+				^^WIDR.ACAC = One; // INT33FE OpRegion BMOP 0x9e ACAC field
+
+			}
+		default:
+			ADBG("Reserved");
+			if (DSFG)  // ACPI debugger say 1
+				CDRH(0);
+			else
+				CDRD(0);
+
+		}
 	}
 
 
