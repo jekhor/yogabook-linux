@@ -1,0 +1,3 @@
+[submodule "ProductionKernelQuilts"]
+	path = ProductionKernelQuilts
+	url = https://github.com/01org/ProductionKernelQuilts.git
