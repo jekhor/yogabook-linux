@@ -268,8 +268,37 @@ static struct gpadc_regmap_t whiskeycove_gpadc_regmaps[GPADC_NUM_CHANNELS] = {
 #define WC_DBGUSBBC2_ADDR	0x5FE1
 #define WC_DBGUSBBCSTAT_ADDR	0x5FE2
 
+#define CHRLEDCTRL_REG 0x5E1F
+#define CHRLEDFSM_REG  0x5E20
+#define CHRLEDPWM_REG  0x5E21
 
-	GPIOs connections (all outputs):
+/* CHRLEDCTRL_REG */
+#define CHRLEDFN_SW		(1<<0)
+#define CHRLEDFN_HW		(0<<0)
+
+#define SWLEDON_ON		(1<<1)
+#define SWLEDON_OFF		(0<<1)         //disable CHRLED circuit
+#define SWLEDON_MASK	 0x02
+
+#define CHRLEDI_2_5MA	(2<<2)
+
+#define CHRLEDF_1_4_HZ	(0<<4)
+#define CHRLEDF_1_2_HZ	(1<<4)
+#define CHRLEDF_1_HZ	(2<<4)
+#define CHRLEDF_2_HZ	(3<<4)
+#define CHRLEDF_MASK	 0x30
+
+/* CHRLEDFSM_REG */
+#define CHRLEDCIP_UNSET		(0<<0)
+
+#define LEDEFF_ON			(1<<1)     //always on
+#define LEDEFF_BLINKING		(2<<1)
+#define LEDEFF_BREATHING	(3<<1)
+#define LEDEFF_MASK     	 0x06
+
+
+
+GPIOs connections (all outputs):
 		GPIO	pin	
 		GMP0	0x20
 		GX00	0x21
