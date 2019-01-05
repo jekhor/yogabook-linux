@@ -5,3 +5,6 @@
 [submodule "yogabook-linux-kernel"]
 	path = yogabook-linux-kernel
 	url = https://github.com/jekhor/yogabook-linux-kernel.git
+[submodule "android_kernel_lenovo_yeti"]
+	path = android_kernel_lenovo_yeti
+	url = https://github.com/jekhor/yogabook-linux-android-kernel.git
