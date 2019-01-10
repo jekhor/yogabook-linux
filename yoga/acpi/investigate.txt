@@ -4,6 +4,7 @@ BDID = 3
 
 
 I2C1:
+	// BQ27200 Fuel Gauge
 	SMFG res. templ: I2C 0x55
 	OperationRegion(DVFG, GenericSerialBus, 0, 0x100):
 		Fields (2-bytes):
@@ -244,6 +245,9 @@ static struct gpadc_regmap_t whiskeycove_gpadc_regmaps[GPADC_NUM_CHANNELS] = {
 #define WC_CHGRSTATUS_ADDR	0x5E19
 #define WC_SCHGRIRQ0_ADDR	0x5E1A
 #define WC_CHGDISCTRL_ADDR	0x5E2F
+
+// bit 6 in WC_CHGDISCTRL_ADDR – CE pin of BQ25892
+
 
 #define WC_VBUSDETCTRL_ADDR	0x5E1D
 #define WC_USBPATH_ADDR		0x5E19
