@@ -76,25 +76,25 @@ INT34D3: PMIC
 	GpioInt: Level, ActiveHigh, PullDefault, "\\_SB.GPO1", Pin list: 0x0f
 
 
-	Управление светодиодом (пиктограмма стилуса):
-		гаснет:
+	'Stylus' LED control:
+		off:
 			0x4 0xe0 [2:1] = 0
-		горит:
+		on:
 			0x4F 0xE0, биты 2 и 1 = 0x02
 			0x4F 0xDF, бит 0 = 1
-		плавно мерцает:
+		breathing:
 			0x4F 0xE0 [2:1] = 0x06
 			0x4F 0xDF [5:4, 0] = 0x11
-		моргает:
+		blinking:
 			0x4F 0xE0 [2:1] = 0x04
 			0x4F 0xDF [5:4, 0] = 0x31
 
 		0x4fe0:
-			2:1	режим, 0 — выкл., 1 горит, 2 - мигает, 3 — мерцает, 
+			2:1	mode, 0 — off., 1 on, 2 - blinking, 3 — breathing, 
 		0x4fdf:
-			5:4	частота мигания
-			3:1	что-то про яркость
-			0	1 - вкл, 0 — выкл
+			5:4	blinking frequency
+			3:1	brightness (LED current imit)
+			0	1 - on, 0 — off
 			
 
 
@@ -364,7 +364,7 @@ GPIOs connections (all outputs):
 	Method EOTG() {
 		ADBG ("PH2")
 		// CHGRCTRL1_OTGMODE_MASK bit
-		// Если не убрать OTGMODE, то тип адаптера не распознаётся
+		// If OTGMODE didn't cleared, charger type is not recognized
 		PMIC(0x5e17) |= 0x40
 		BQ25892(0x07) &= 0xCF // disable watchdog
 		ADBG(BQ25892(0x07))
