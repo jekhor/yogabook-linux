@@ -8,3 +8,6 @@
 [submodule "android_kernel_lenovo_yeti"]
 	path = android_kernel_lenovo_yeti
 	url = https://github.com/jekhor/yogabook-linux-android-kernel.git
+[submodule "chromiumos_touch_keyboard"]
+	path = chromiumos_touch_keyboard
+	url = https://github.com/jekhor/chromiumos_touch_keyboard.git
