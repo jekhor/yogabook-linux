@@ -14,3 +14,6 @@
 [submodule "live-cd"]
 	path = live-cd
 	url = https://github.com/jekhor/yogabook-livecd.git
+[submodule "android_kernel_lenovo_yeti-sean_hoyt"]
+	path = android_kernel_lenovo_yeti-sean_hoyt
+	url = https://github.com/deadman96385/android_kernel_lenovo_yeti.git
