@@ -17,3 +17,6 @@
 [submodule "android_kernel_lenovo_yeti-sean_hoyt"]
 	path = android_kernel_lenovo_yeti-sean_hoyt
 	url = https://github.com/deadman96385/android_kernel_lenovo_yeti.git
+[submodule "alsa-ucm-conf-yogabook"]
+	path = alsa-ucm-conf-yogabook
+	url = https://github.com/jekhor/alsa-ucm-conf-yogabook
