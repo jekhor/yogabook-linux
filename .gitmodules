@@ -20,3 +20,6 @@
 [submodule "alsa-ucm-conf-yogabook"]
 	path = alsa-ucm-conf-yogabook
 	url = https://github.com/jekhor/alsa-ucm-conf-yogabook
+[submodule "yogabook-support"]
+	path = yogabook-support
+	url = https://github.com/jekhor/yogabook-support.git
