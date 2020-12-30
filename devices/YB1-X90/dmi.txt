@@ -1,0 +1,22 @@
+root@localhost:/sys/class/dmi/id# for i in *; do echo -n "$i: "; cat $i; done
+bios_date: 01/24/2017
+bios_vendor: Intel Corporation
+bios_version: CHTTYETI.X64.0514.R1B.1701240934
+board_asset_tag: Base Board Asset Tag
+board_name: Cherry Trail Tablet
+board_serial: 1
+board_vendor: Intel Corp.
+board_version: 0
+chassis_asset_tag: Asset Tag
+chassis_serial: serial#
+chassis_type: 9
+chassis_vendor: Intel Corporation
+chassis_version: 0.1
+modalias: dmi:bvnIntelCorporation:bvrCHTTYETI.X64.0514.R1B.1701240934:bd01/24/2017:svnIntelCorporation:pnCHERRYVIEWD1PLATFORM:pvrYETI-11:rvnIntelCorp.:rnCherryTrailTablet:rvr0:cvnIntelCorporation:ct9:cvr0.1:
+product_name: CHERRYVIEW D1 PLATFORM
+product_serial: YETI9027B888
+product_uuid: 88B82790-D0C8-BD45-159F-54EA5FBD3D97
+product_version: YETI-11
+sys_vendor: Intel Corporation
+uevent: MODALIAS=dmi:bvnIntelCorporation:bvrCHTTYETI.X64.0514.R1B.1701240934:bd01/24/2017:svnIntelCorporation:pnCHERRYVIEWD1PLATFORM:pvrYETI-11:rvnIntelCorp.:rnCherryTrailTablet:rvr0:cvnIntelCorporation:ct9:cvr0.1:
+
