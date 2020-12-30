@@ -1,0 +1,402 @@
+GPIOs 120-125, i2c/0-002c, rt5677, can sleep:
+
+GPIOs 126-219, i2c/i2c-INT34D3:00:6e, intel_crystalcove, can sleep:
+ gpio-0  in  lo           ctlo=18,s0 unmask        
+ gpio-1  out hi           ctlo=2b,s0 unmask        
+ gpio-2  in  lo           ctlo=18,s0 unmask        
+ gpio-3  in  hi           ctlo=18,s0 unmask        
+ gpio-4  in  hi           ctlo=87,s0 unmask        
+ gpio-5  in  hi           ctlo=4a,s0 mask          
+ gpio-6  in  lo           ctlo=4a,s0 mask          
+ gpio-7  in  lo           ctlo=87,s0 unmask        
+ gpio-8  in  hi           ctlo= 1,s0 mask          
+ gpio-9  in  hi           ctlo=18,s0 mask          
+
+GPIOs 220-227, pnp/00:0f, 00:0f:
+	CV_INT_STAT_REG: 0x0
+	CV_INT_MASK_REG: 0x1
+	intline: 0, offset: 6
+	intline: 1, offset: -1
+	intline: 2, offset: -1
+	intline: 3, offset: -1
+	intline: 4, offset: -1
+	intline: 5, offset: -1
+	intline: 6, offset: -1
+	intline: 7, offset: -1
+	intline: 8, offset: -1
+	intline: 9, offset: -1
+	intline: 10, offset: -1
+	intline: 11, offset: -1
+	intline: 12, offset: -1
+	intline: 13, offset: -1
+	intline: 14, offset: -1
+	intline: 15, offset: -1
+	gpio-220 (Unrequested         ) virtual-0   	Hi-Z low  offset:0x4400 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10300    ctrl1: 0x4c00000 
+	gpio-221 (Unrequested         ) virtual-1   	Hi-Z low  offset:0x4408 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10300    ctrl1: 0x4c00000 
+	gpio-222 (Unrequested         ) virtual-2   	Hi-Z low  offset:0x4410 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10300    ctrl1: 0x4c00000 
+	gpio-223 (Unrequested         ) virtual-3   	Hi-Z low  offset:0x4418 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10300    ctrl1: 0x4c00000 
+	gpio-224 (Unrequested         ) virtual-4   	Hi-Z high offset:0x4420 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10301    ctrl1: 0x4c00000 
+	gpio-225 (Unrequested         ) virtual-5   	Hi-Z low  offset:0x4428 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10300    ctrl1: 0x4c00000 
+	gpio-226 (ACPI:Event          ) virtual-6   	out  low  offset:0x4430 mux:0 	level-high IntSel:0 	 ctrl0: 0x108000   ctrl1: 0x4c00004 
+	gpio-227 (Unrequested         ) virtual-7   	out  low  offset:0x4438 mux:0 	rising     IntSel:0 	 ctrl0: 0x108100   ctrl1: 0x4c00002 
+GPIOs 228-313, pnp/00:0e, 00:0e:
+	CV_INT_STAT_REG: 0x0
+	CV_INT_MASK_REG: 0x11
+	intline: 0, offset: 77
+	intline: 1, offset: -1
+	intline: 2, offset: -1
+	intline: 3, offset: -1
+	intline: 4, offset: 81
+	intline: 5, offset: -1
+	intline: 6, offset: -1
+	intline: 7, offset: -1
+	intline: 8, offset: -1
+	intline: 9, offset: -1
+	intline: 10, offset: -1
+	intline: 11, offset: -1
+	intline: 12, offset: -1
+	intline: 13, offset: -1
+	intline: 14, offset: -1
+	intline: 15, offset: -1
+	gpio-228 (Unrequested         ) southeast-0   	out  low  offset:0x4400 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10080    ctrl1: 0x4c00000 
+	gpio-229 (Unrequested         ) southeast-1   	out  low  offset:0x4408 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-230 (Unrequested         ) southeast-2   	out  low  offset:0x4410 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10080    ctrl1: 0x4c00000 
+	gpio-231 (Unrequested         ) southeast-3   	out  high offset:0x4418 mux:3 	disabled   IntSel:0 	 ctrl0: 0x30001    ctrl1: 0x4c00020 
+	gpio-232 (Unrequested         ) southeast-4   	out  low  offset:0x4420 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10080    ctrl1: 0x4c00000 
+	gpio-233 (Unrequested         ) southeast-5   	out  high offset:0x4428 mux:1 	disabled   IntSel:0 	 ctrl0: 0x110001   ctrl1: 0x4c00000 
+	gpio-234 (Unrequested         ) southeast-6   	out  high offset:0x4430 mux:3 	disabled   IntSel:0 	 ctrl0: 0x30001    ctrl1: 0x4c00020 
+	gpio-235 (Unrequested         ) southeast-7   	out  low  offset:0x4438 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10080    ctrl1: 0x4c00000 
+	gpio-236 (Unrequested         ) southeast-8   	     high offset:0x4440 mux:15 	           IntSel:15 	 ctrl0: 0xffffffff ctrl1: 0xffffffff
+	gpio-237 Invalid
+	gpio-238 Invalid
+	gpio-239 Invalid
+	gpio-240 Invalid
+	gpio-241 Invalid
+	gpio-242 Invalid
+	gpio-243 (Unrequested         ) southeast-15  	in   high offset:0x4800 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8201     ctrl1: 0x4c00000 
+	gpio-244 (Unrequested         ) southeast-16  	out  high offset:0x4808 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10081    ctrl1: 0x4c00000 
+	gpio-245 (Unrequested         ) southeast-17  	out  high offset:0x4810 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910081   ctrl1: 0x4c00000 
+	gpio-246 (codec rst           ) southeast-18  	out  high offset:0x4818 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8003     ctrl1: 0x4c00000 
+	gpio-247 (Unrequested         ) southeast-19  	in   high offset:0x4820 mux:0 	both       IntSel:5 	 ctrl0: 0x50908201 ctrl1: 0x4c00003 
+	gpio-248 (Unrequested         ) southeast-20  	out  high offset:0x4828 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910081   ctrl1: 0x4c00000 
+	gpio-249 (Unrequested         ) southeast-21  	in   high offset:0x4830 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8201     ctrl1: 0x4c00000 
+	gpio-250 (Unrequested         ) southeast-22  	in   high offset:0x4838 mux:0 	both       IntSel:1 	 ctrl0: 0x10008201 ctrl1: 0x4c00003 
+	gpio-251 (Unrequested         ) southeast-23  	out  high offset:0x4840 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910081   ctrl1: 0x4c00000 
+	gpio-252 (Unrequested         ) southeast-24  	out  high offset:0x4848 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910081   ctrl1: 0x4c00000 
+	gpio-253 (codec ldo en        ) southeast-25  	out  high offset:0x4850 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8003     ctrl1: 0x4c00000 
+	gpio-254 (Unrequested         ) southeast-26  	out  high offset:0x4858 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910081   ctrl1: 0x4c00000 
+	gpio-255 Invalid
+	gpio-256 Invalid
+	gpio-257 Invalid
+	gpio-258 (Unrequested         ) southeast-30  	out  high offset:0x4c00 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10081   ctrl1: 0x4c00020 
+	gpio-259 (Unrequested         ) southeast-31  	out  low  offset:0x4c08 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10080   ctrl1: 0x4c00000 
+	gpio-260 (Unrequested         ) southeast-32  	out  high offset:0x4c10 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10081   ctrl1: 0x4c00000 
+	gpio-261 (Unrequested         ) southeast-33  	out  high offset:0x4c18 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10081   ctrl1: 0x4c00000 
+	gpio-262 (Unrequested         ) southeast-34  	out  high offset:0x4c20 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10081   ctrl1: 0x4c00000 
+	gpio-263 (Unrequested         ) southeast-35  	out  high offset:0x4c28 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10081   ctrl1: 0x4c00000 
+	gpio-264 Invalid
+	gpio-265 Invalid
+	gpio-266 Invalid
+	gpio-267 Invalid
+	gpio-268 Invalid
+	gpio-269 Invalid
+	gpio-270 Invalid
+	gpio-271 Invalid
+	gpio-272 Invalid
+	gpio-273 (Unrequested         ) southeast-45  	in   low  offset:0x5000 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8200     ctrl1: 0x4c00000 
+	gpio-274 (Unrequested         ) southeast-46  	out  low  offset:0x5008 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8100     ctrl1: 0x4c00000 
+	gpio-275 (Unrequested         ) southeast-47  	in   high offset:0x5010 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8201     ctrl1: 0x4c00000 
+	gpio-276 (speaker boost pa ctl) southeast-48  	out  low  offset:0x5018 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8000     ctrl1: 0x4c00000 
+	gpio-277 (Unrequested         ) southeast-49  	in   high offset:0x5020 mux:0 	level-high IntSel:6 	 ctrl0: 0x60908201 ctrl1: 0x4c00004 
+	gpio-278 (Unrequested         ) southeast-50  	out  high offset:0x5028 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-279 (Unrequested         ) southeast-51  	out  low  offset:0x5030 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8102     ctrl1: 0x4c00000 
+	gpio-280 (enable_keyboard_led ) southeast-52  	out  high offset:0x5038 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8003     ctrl1: 0x4c00000 
+	gpio-281 Invalid
+	gpio-282 Invalid
+	gpio-283 Invalid
+	gpio-284 Invalid
+	gpio-285 Invalid
+	gpio-286 Invalid
+	gpio-287 Invalid
+	gpio-288 (Unrequested         ) southeast-60  	out  low  offset:0x5400 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910000   ctrl1: 0x4c00000 
+	gpio-289 (Unrequested         ) southeast-61  	out  high offset:0x5408 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-290 (Unrequested         ) southeast-62  	out  low  offset:0x5410 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-291 (Unrequested         ) southeast-63  	out  high offset:0x5418 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910081   ctrl1: 0x4c00000 
+	gpio-292 (Unrequested         ) southeast-64  	out  low  offset:0x5420 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910000   ctrl1: 0x4c00000 
+	gpio-293 (Unrequested         ) southeast-65  	out  high offset:0x5428 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910081   ctrl1: 0x4c00000 
+	gpio-294 (uart_ajck_switch    ) southeast-66  	out  low  offset:0x5430 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8000     ctrl1: 0x4c00000 
+	gpio-295 (Unrequested         ) southeast-67  	out  high offset:0x5438 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910081   ctrl1: 0x4c00000 
+	gpio-296 (Unrequested         ) southeast-68  	out  high offset:0x5440 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910081   ctrl1: 0x4c00000 
+	gpio-297 (Unrequested         ) southeast-69  	out  high offset:0x5448 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10081    ctrl1: 0x4c00000 
+	gpio-298 Invalid
+	gpio-299 Invalid
+	gpio-300 Invalid
+	gpio-301 Invalid
+	gpio-302 Invalid
+	gpio-303 (wlan-power          ) southeast-75  	out  high offset:0x5800 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8003     ctrl1: 0x4c00000 
+	gpio-304 (Unrequested         ) southeast-76  	out  high offset:0x5808 mux:1 	both       IntSel:2 	 ctrl0: 0x20910001 ctrl1: 0x4c00003 
+	gpio-305 (hideep_gpio_305     ) southeast-77  	in   high offset:0x5810 mux:0 	level-low  IntSel:0 	 ctrl0: 0xc08201   ctrl1: 0x4c00044 
+	gpio-306 (Unrequested         ) southeast-78  	in   high offset:0x5818 mux:0 	disabled   IntSel:0 	 ctrl0: 0x908201   ctrl1: 0x4c00000 
+	gpio-307 (Unrequested         ) southeast-79  	out  low  offset:0x5820 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8100     ctrl1: 0x4c00000 
+	gpio-308 (Unrequested         ) southeast-80  	out  high offset:0x5828 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-309 (INT33BB:01 cd       ) southeast-81  	in   high offset:0x5830 mux:0 	both       IntSel:4 	 ctrl0: 0x40908201 ctrl1: 0x4c00003 
+	gpio-310 (Unrequested         ) southeast-82  	Hi-Z low  offset:0x5838 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910300   ctrl1: 0x5c00000 
+	gpio-311 (Unrequested         ) southeast-83  	out  low  offset:0x5840 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-312 (Unrequested         ) southeast-84  	out  low  offset:0x5848 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-313 (Unrequested         ) southeast-85  	in   high offset:0x5850 mux:0 	disabled   IntSel:0 	 ctrl0: 0x908201   ctrl1: 0x4c00000 
+
+GPIOs 314-340, pnp/00:0d, 00:0d:
+	CV_INT_STAT_REG: 0x0
+	CV_INT_MASK_REG: 0x2d
+	intline: 0, offset: 8
+	intline: 1, offset: -1
+	intline: 2, offset: 18
+	intline: 3, offset: 19
+	intline: 4, offset: -1
+	intline: 5, offset: 16
+	intline: 6, offset: -1
+	intline: 7, offset: -1
+	intline: 8, offset: -1
+	intline: 9, offset: -1
+	intline: 10, offset: -1
+	intline: 11, offset: -1
+	intline: 12, offset: -1
+	intline: 13, offset: -1
+	intline: 14, offset: -1
+	intline: 15, offset: -1
+	gpio-314 (Unrequested         ) east-0   	Hi-Z high offset:0x4400 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910301   ctrl1: 0x5c00000 
+	gpio-315 (Unrequested         ) east-1   	out  high offset:0x4408 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-316 (Unrequested         ) east-2   	out  high offset:0x4410 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00000 
+	gpio-317 (Unrequested         ) east-3   	out  high offset:0x4418 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00000 
+	gpio-318 (Unrequested         ) east-4   	in   high offset:0x4420 mux:0 	level-high IntSel:4 	 ctrl0: 0x40908201 ctrl1: 0x4c00004 
+	gpio-319 (Unrequested         ) east-5   	out  high offset:0x4428 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00000 
+	gpio-320 (Unrequested         ) east-6   	out  high offset:0x4430 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00000 
+	gpio-321 (Unrequested         ) east-7   	out  low  offset:0x4438 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-322 (power               ) east-8   	in   high offset:0x4440 mux:0 	both       IntSel:0 	 ctrl0: 0xc908201  ctrl1: 0x4c00003 
+	gpio-323 (Unrequested         ) east-9   	out  high offset:0x4448 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00000 
+	gpio-324 (Unrequested         ) east-10  	in   low  offset:0x4450 mux:0 	rising     IntSel:1 	 ctrl0: 0x1c008200 ctrl1: 0x4c00002 
+	gpio-325 (Unrequested         ) east-11  	Hi-Z high offset:0x4458 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910301   ctrl1: 0x5c00000 
+	gpio-326 Invalid
+	gpio-327 Invalid
+	gpio-328 Invalid
+	gpio-329 (Unrequested         ) east-15  	out  high offset:0x4800 mux:0 	disabled   IntSel:0 	 ctrl0: 0x908003   ctrl1: 0x4c00000 
+	gpio-330 (SX9310_NIRQ         ) east-16  	in   high offset:0x4808 mux:0 	falling    IntSel:5 	 ctrl0: 0x5ca08201 ctrl1: 0x4c00001 
+	gpio-331 (Unrequested         ) east-17  	out  high offset:0x4810 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00020 
+	gpio-332 (sec_hall            ) east-18  	in   high offset:0x4818 mux:0 	both       IntSel:2 	 ctrl0: 0x2c908201 ctrl1: 0x4c00003 
+	gpio-333 (hall                ) east-19  	in   high offset:0x4820 mux:0 	both       IntSel:3 	 ctrl0: 0x3c908201 ctrl1: 0x4c00003 
+	gpio-334 (Unrequested         ) east-20  	out  high offset:0x4828 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00020 
+	gpio-335 (Unrequested         ) east-21  	out  high offset:0x4830 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00020 
+	gpio-336 (Unrequested         ) east-22  	out  low  offset:0x4838 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00020 
+	gpio-337 (Unrequested         ) east-23  	out  low  offset:0x4840 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-338 (SX9310_SARSTATE     ) east-24  	out  low  offset:0x4848 mux:0 	disabled   IntSel:0 	 ctrl0: 0x908000   ctrl1: 0x4c00000 
+	gpio-339 (Unrequested         ) east-25  	out  high offset:0x4850 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00020 
+	gpio-340 (Unrequested         ) east-26  	out  high offset:0x4858 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00020 
+GPIOs 341-413, pnp/00:0c, 00:0c:
+	CV_INT_STAT_REG: 0x0
+	CV_INT_MASK_REG: 0x2f
+	intline: 0, offset: 56
+	intline: 1, offset: 5
+	intline: 2, offset: 49
+	intline: 3, offset: 8
+	intline: 4, offset: -1
+	intline: 5, offset: 15
+	intline: 6, offset: -1
+	intline: 7, offset: -1
+	intline: 8, offset: -1
+	intline: 9, offset: -1
+	intline: 10, offset: -1
+	intline: 11, offset: -1
+	intline: 12, offset: -1
+	intline: 13, offset: -1
+	intline: 14, offset: -1
+	intline: 15, offset: -1
+	gpio-341 (Unrequested         ) north-0   	out  low  offset:0x4400 mux:0 	disabled   IntSel:0 	 ctrl0: 0x108102   ctrl1: 0x4c00000 
+	gpio-342 (?                   ) north-1   	out  low  offset:0x4408 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8000     ctrl1: 0x4c00000 
+	gpio-343 (Unrequested         ) north-2   	out  low  offset:0x4410 mux:0 	disabled   IntSel:0 	 ctrl0: 0x908102   ctrl1: 0x4c00000 
+	gpio-344 (?                   ) north-3   	out  low  offset:0x4418 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8000     ctrl1: 0x4c00000 
+	gpio-345 (Unrequested         ) north-4   	in   high offset:0x4420 mux:0 	disabled   IntSel:0 	 ctrl0: 0xc008201  ctrl1: 0x4c00040 
+	gpio-346 (?                   ) north-5   	in   low  offset:0x4428 mux:0 	rising     IntSel:1 	 ctrl0: 0x1c008200 ctrl1: 0x4c00002 
+	gpio-347 (Unrequested         ) north-6   	in   low  offset:0x4430 mux:0 	both       IntSel:4 	 ctrl0: 0x40108200 ctrl1: 0x4c00003 
+	gpio-348 (Unrequested         ) north-7   	in   low  offset:0x4438 mux:0 	rising     IntSel:7 	 ctrl0: 0x7c108200 ctrl1: 0x4c00002 
+	gpio-349 (volume_down         ) north-8   	in   high offset:0x4440 mux:0 	both       IntSel:3 	 ctrl0: 0x3c908201 ctrl1: 0x4c00003 
+	gpio-350 Invalid
+	gpio-351 Invalid
+	gpio-352 Invalid
+	gpio-353 Invalid
+	gpio-354 Invalid
+	gpio-355 Invalid
+	gpio-356 (PMIC Interupt       ) north-15  	in   low  offset:0x4800 mux:0 	level-high IntSel:5 	 ctrl0: 0x5c008200 ctrl1: 0x4c00004 
+	gpio-357 (Unrequested         ) north-16  	out  low  offset:0x4808 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8102     ctrl1: 0x85c00000
+	gpio-358 (Unrequested         ) north-17  	out  low  offset:0x4810 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-359 (Unrequested         ) north-18  	out  low  offset:0x4818 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-360 (Unrequested         ) north-19  	in   low  offset:0x4820 mux:0 	rising     IntSel:6 	 ctrl0: 0x6c108200 ctrl1: 0x4c00002 
+	gpio-361 (camera_2_reset      ) north-20  	out  low  offset:0x4828 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8000     ctrl1: 0x4c00000 
+	gpio-362 (Unrequested         ) north-21  	Hi-Z low  offset:0x4830 mux:1 	disabled   IntSel:0 	 ctrl0: 0x110300   ctrl1: 0x5c00000 
+	gpio-363 (Unrequested         ) north-22  	out  low  offset:0x4838 mux:1 	disabled   IntSel:0 	 ctrl0: 0xc010002  ctrl1: 0x4c00000 
+	gpio-364 (Unrequested         ) north-23  	out  low  offset:0x4840 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x85c00000
+	gpio-365 (shutdown            ) north-24  	out  low  offset:0x4848 mux:0 	disabled   IntSel:0 	 ctrl0: 0xc008000  ctrl1: 0x4c00000 
+	gpio-366 (Unrequested         ) north-25  	Hi-Z low  offset:0x4850 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8300     ctrl1: 0x4c00000 
+	gpio-367 (Unrequested         ) north-26  	out  high offset:0x4858 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00000 
+	gpio-368 (Unrequested         ) north-27  	out  low  offset:0x4860 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8100     ctrl1: 0x85c00000
+	gpio-369 Invalid
+	gpio-370 Invalid
+	gpio-371 (Unrequested         ) north-30  	out  high offset:0x4c00 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00000 
+	gpio-372 (Unrequested         ) north-31  	out  high offset:0x4c08 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00000 
+	gpio-373 (Unrequested         ) north-32  	out  low  offset:0x4c10 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910000   ctrl1: 0x4c00030 
+	gpio-374 (Unrequested         ) north-33  	Hi-Z high offset:0x4c18 mux:0 	disabled   IntSel:0 	 ctrl0: 0xc00301   ctrl1: 0x5c00020 
+	gpio-375 (Unrequested         ) north-34  	out  high offset:0x4c20 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00000 
+	gpio-376 (Unrequested         ) north-35  	Hi-Z high offset:0x4c28 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10301   ctrl1: 0x5c00000 
+	gpio-377 (Unrequested         ) north-36  	Hi-Z low  offset:0x4c30 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10300    ctrl1: 0x5c00000 
+	gpio-378 (Unrequested         ) north-37  	out  high offset:0x4c38 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00000 
+	gpio-379 (Unrequested         ) north-38  	Hi-Z high offset:0x4c40 mux:1 	disabled   IntSel:0 	 ctrl0: 0xc10301   ctrl1: 0x5c00040 
+	gpio-380 (Unrequested         ) north-39  	out  low  offset:0x4c48 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-381 (Unrequested         ) north-40  	Hi-Z high offset:0x4c50 mux:1 	disabled   IntSel:0 	 ctrl0: 0xc10301   ctrl1: 0x5c00000 
+	gpio-382 (Unrequested         ) north-41  	out  high offset:0x4c58 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00000 
+	gpio-383 Invalid
+	gpio-384 Invalid
+	gpio-385 Invalid
+	gpio-386 (camera_1_pwdn       ) north-45  	out  low  offset:0x5000 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8000     ctrl1: 0x4c00000 
+	gpio-387 (Unrequested         ) north-46  	in   high offset:0x5008 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8201     ctrl1: 0x4c00000 
+	gpio-388 (drv2604L_Enable     ) north-47  	out  high offset:0x5010 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8003     ctrl1: 0x4c00000 
+	gpio-389 (Unrequested         ) north-48  	out  high offset:0x5018 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8003     ctrl1: 0x4c00000 
+	gpio-390 (wacom_interrupt     ) north-49  	in   high offset:0x5020 mux:0 	level-low  IntSel:2 	 ctrl0: 0x20908201 ctrl1: 0x4c00044 
+	gpio-391 (camera_1_reset      ) north-50  	out  low  offset:0x5028 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8000     ctrl1: 0x4c00000 
+	gpio-392 (Unrequested         ) north-51  	out  low  offset:0x5030 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8102     ctrl1: 0x4c00000 
+	gpio-393 (camera_1_reset      ) north-52  	out  low  offset:0x5038 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8000     ctrl1: 0x4c00000 
+	gpio-394 (GTP RST PORT        ) north-53  	in   high offset:0x5040 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8203     ctrl1: 0x4c00000 
+	gpio-395 (camera_1_pwdn       ) north-54  	out  low  offset:0x5048 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8000     ctrl1: 0x4c00000 
+	gpio-396 (Unrequested         ) north-55  	out  low  offset:0x5050 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8100     ctrl1: 0x4c00000 
+	gpio-397 (GTP INT IRQ         ) north-56  	in   high offset:0x5058 mux:0 	falling    IntSel:0 	 ctrl0: 0x908201   ctrl1: 0x4c00001 
+	gpio-398 Invalid
+	gpio-399 Invalid
+	gpio-400 Invalid
+	gpio-401 (Unrequested         ) north-60  	out  high offset:0x5400 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8007     ctrl1: 0x4c00000 
+	gpio-402 (Unrequested         ) north-61  	out  high offset:0x5408 mux:1 	disabled   IntSel:0 	 ctrl0: 0x3a10001  ctrl1: 0x4c00020 
+	gpio-403 (Unrequested         ) north-62  	out  low  offset:0x5410 mux:3 	disabled   IntSel:0 	 ctrl0: 0x30000    ctrl1: 0x4c00000 
+	gpio-404 (Unrequested         ) north-63  	out  low  offset:0x5418 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8104     ctrl1: 0x4c00000 
+	gpio-405 (Unrequested         ) north-64  	out  high offset:0x5420 mux:1 	disabled   IntSel:0 	 ctrl0: 0x3a10001  ctrl1: 0x4c00020 
+	gpio-406 (Unrequested         ) north-65  	out  high offset:0x5428 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8007     ctrl1: 0x4c00000 
+	gpio-407 (Unrequested         ) north-66  	out  low  offset:0x5430 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-408 (Unrequested         ) north-67  	out  high offset:0x5438 mux:3 	disabled   IntSel:0 	 ctrl0: 0x30001    ctrl1: 0x4c00000 
+	gpio-409 (Unrequested         ) north-68  	out  high offset:0x5440 mux:1 	disabled   IntSel:0 	 ctrl0: 0x3010001  ctrl1: 0x4c00020 
+	gpio-410 (Unrequested         ) north-69  	out  low  offset:0x5448 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8106     ctrl1: 0x4c00000 
+	gpio-411 (Unrequested         ) north-70  	out  low  offset:0x5450 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8106     ctrl1: 0x4c00000 
+	gpio-412 (Unrequested         ) north-71  	out  low  offset:0x5458 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-413 (Unrequested         ) north-72  	out  low  offset:0x5460 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8104     ctrl1: 0x4c00000 
+GPIOs 414-511, pnp/00:0b, 00:0b:
+	CV_INT_STAT_REG: 0x0
+	CV_INT_MASK_REG: 0x17
+	intline: 0, offset: 17
+	intline: 1, offset: 93
+	intline: 2, offset: 95
+	intline: 3, offset: -1
+	intline: 4, offset: 77
+	intline: 5, offset: -1
+	intline: 6, offset: -1
+	intline: 7, offset: -1
+	intline: 8, offset: -1
+	intline: 9, offset: -1
+	intline: 10, offset: -1
+	intline: 11, offset: -1
+	intline: 12, offset: -1
+	intline: 13, offset: -1
+	intline: 14, offset: -1
+	intline: 15, offset: -1
+	gpio-414 (Unrequested         ) southwest-0   	out  high offset:0x4400 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-415 (Unrequested         ) southwest-1   	out  low  offset:0x4408 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910000   ctrl1: 0x4c00000 
+	gpio-416 (Unrequested         ) southwest-2   	out  low  offset:0x4410 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-417 (Unrequested         ) southwest-3   	out  high offset:0x4418 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-418 (Unrequested         ) southwest-4   	out  low  offset:0x4420 mux:0 	disabled   IntSel:0 	 ctrl0: 0x108100   ctrl1: 0x4c00000 
+	gpio-419 (Unrequested         ) southwest-5   	out  high offset:0x4428 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-420 (Unrequested         ) southwest-6   	out  high offset:0x4430 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10001    ctrl1: 0x4c00000 
+	gpio-421 (hideep_gpio_421     ) southwest-7   	out  high offset:0x4438 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8003     ctrl1: 0x4c00000 
+	gpio-422 Invalid
+	gpio-423 Invalid
+	gpio-424 Invalid
+	gpio-425 Invalid
+	gpio-426 Invalid
+	gpio-427 Invalid
+	gpio-428 Invalid
+	gpio-429 (hsu_rts             ) southwest-15  	out  high offset:0x4800 mux:1 	disabled   IntSel:0 	 ctrl0: 0x118003   ctrl1: 0x4c00000 
+	gpio-430 (Unrequested         ) southwest-16  	out  high offset:0x4808 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-431 (hsu_rxd             ) southwest-17  	in   high offset:0x4810 mux:1 	both       IntSel:0 	 ctrl0: 0x918201   ctrl1: 0x4c00003 
+	gpio-432 (Unrequested         ) southwest-18  	out  high offset:0x4818 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-433 (hsu_rts             ) southwest-19  	out  low  offset:0x4820 mux:1 	disabled   IntSel:0 	 ctrl0: 0x118000   ctrl1: 0x4c00000 
+	gpio-434 (Unrequested         ) southwest-20  	out  high offset:0x4828 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-435 (Unrequested         ) southwest-21  	out  high offset:0x4830 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-436 (Unrequested         ) southwest-22  	out  low  offset:0x4838 mux:1 	disabled   IntSel:0 	 ctrl0: 0x110000   ctrl1: 0x4c00000 
+	gpio-437 Invalid
+	gpio-438 Invalid
+	gpio-439 Invalid
+	gpio-440 Invalid
+	gpio-441 Invalid
+	gpio-442 Invalid
+	gpio-443 Invalid
+	gpio-444 (Unrequested         ) southwest-30  	out  low  offset:0x4c00 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-445 (Unrequested         ) southwest-31  	out  low  offset:0x4c08 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-446 (Unrequested         ) southwest-32  	out  low  offset:0x4c10 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-447 (Unrequested         ) southwest-33  	out  low  offset:0x4c18 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-448 (Unrequested         ) southwest-34  	out  low  offset:0x4c20 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00020 
+	gpio-449 (Unrequested         ) southwest-35  	out  low  offset:0x4c28 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-450 (Unrequested         ) southwest-36  	out  low  offset:0x4c30 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-451 (Unrequested         ) southwest-37  	out  low  offset:0x4c38 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-452 Invalid
+	gpio-453 Invalid
+	gpio-454 Invalid
+	gpio-455 Invalid
+	gpio-456 Invalid
+	gpio-457 Invalid
+	gpio-458 Invalid
+	gpio-459 (Unrequested         ) southwest-45  	out  high offset:0x5000 mux:1 	disabled   IntSel:0 	 ctrl0: 0xc10001   ctrl1: 0x4c00020 
+	gpio-460 (Unrequested         ) southwest-46  	out  high offset:0x5008 mux:3 	disabled   IntSel:0 	 ctrl0: 0xa30001   ctrl1: 0x4c00000 
+	gpio-461 (Unrequested         ) southwest-47  	out  high offset:0x5010 mux:1 	disabled   IntSel:0 	 ctrl0: 0xc10001   ctrl1: 0x4c00020 
+	gpio-462 (Unrequested         ) southwest-48  	out  high offset:0x5018 mux:1 	disabled   IntSel:0 	 ctrl0: 0xc10001   ctrl1: 0x4c00020 
+	gpio-463 (Unrequested         ) southwest-49  	Hi-Z high offset:0x5020 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910301   ctrl1: 0x85c00020
+	gpio-464 (Unrequested         ) southwest-50  	out  high offset:0x5028 mux:3 	disabled   IntSel:0 	 ctrl0: 0xa30001   ctrl1: 0x4c00000 
+	gpio-465 (Unrequested         ) southwest-51  	out  high offset:0x5030 mux:1 	disabled   IntSel:0 	 ctrl0: 0xc10001   ctrl1: 0x4c00020 
+	gpio-466 (Unrequested         ) southwest-52  	Hi-Z high offset:0x5038 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910301   ctrl1: 0x85c00020
+	gpio-467 Invalid
+	gpio-468 Invalid
+	gpio-469 Invalid
+	gpio-470 Invalid
+	gpio-471 Invalid
+	gpio-472 Invalid
+	gpio-473 Invalid
+	gpio-474 (Unrequested         ) southwest-60  	out  high offset:0x5400 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00020 
+	gpio-475 (Unrequested         ) southwest-61  	out  high offset:0x5408 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00020 
+	gpio-476 (Unrequested         ) southwest-62  	out  high offset:0x5410 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00020 
+	gpio-477 (Unrequested         ) southwest-63  	out  high offset:0x5418 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00020 
+	gpio-478 (Unrequested         ) southwest-64  	out  high offset:0x5420 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00020 
+	gpio-479 (Unrequested         ) southwest-65  	out  high offset:0x5428 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00020 
+	gpio-480 (Unrequested         ) southwest-66  	out  high offset:0x5430 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00020 
+	gpio-481 (Unrequested         ) southwest-67  	out  high offset:0x5438 mux:1 	disabled   IntSel:0 	 ctrl0: 0xa10001   ctrl1: 0x4c00020 
+	gpio-482 Invalid
+	gpio-483 Invalid
+	gpio-484 Invalid
+	gpio-485 Invalid
+	gpio-486 Invalid
+	gpio-487 Invalid
+	gpio-488 Invalid
+	gpio-489 (reset               ) southwest-75  	out  low  offset:0x5800 mux:0 	disabled   IntSel:3 	 ctrl0: 0x3c008000 ctrl1: 0x4c00000 
+	gpio-490 (Unrequested         ) southwest-76  	out  low  offset:0x5808 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8102     ctrl1: 0x4c00000 
+	gpio-491 (ti switch           ) southwest-77  	in   high offset:0x5810 mux:0 	level-low  IntSel:4 	 ctrl0: 0x40908201 ctrl1: 0x4c00044 
+	gpio-492 (ssic_wakeup         ) southwest-78  	in   low  offset:0x5818 mux:0 	rising     IntSel:5 	 ctrl0: 0x50108200 ctrl1: 0x4c00002 
+	gpio-493 (drv2604L_Enable     ) southwest-79  	out  high offset:0x5820 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8003     ctrl1: 0x4c00000 
+	gpio-494 (Unrequested         ) southwest-80  	out  high offset:0x5828 mux:2 	disabled   IntSel:0 	 ctrl0: 0x20001    ctrl1: 0x4c00000 
+	gpio-495 (Unrequested         ) southwest-81  	out  low  offset:0x5830 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8102     ctrl1: 0x4c00000 
+	gpio-496 (wacom_reset         ) southwest-82  	out  high offset:0x5838 mux:0 	disabled   IntSel:0 	 ctrl0: 0x8003     ctrl1: 0x4c00000 
+	gpio-497 Invalid
+	gpio-498 Invalid
+	gpio-499 Invalid
+	gpio-500 Invalid
+	gpio-501 Invalid
+	gpio-502 Invalid
+	gpio-503 Invalid
+	gpio-504 (Unrequested         ) southwest-90  	out  high offset:0x5c00 mux:1 	disabled   IntSel:0 	 ctrl0: 0x910001   ctrl1: 0x4c00000 
+	gpio-505 (Unrequested         ) southwest-91  	in   high offset:0x5c08 mux:0 	both       IntSel:0 	 ctrl0: 0xc908201  ctrl1: 0x4c00003 
+	gpio-506 (Unrequested         ) southwest-92  	out  low  offset:0x5c10 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-507 (volume_up           ) southwest-93  	in   high offset:0x5c18 mux:0 	both       IntSel:1 	 ctrl0: 0x1c908201 ctrl1: 0x4c00003 
+	gpio-508 (Unrequested         ) southwest-94  	out  low  offset:0x5c20 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-509 (home                ) southwest-95  	in   high offset:0x5c28 mux:0 	both       IntSel:2 	 ctrl0: 0x2c908201 ctrl1: 0x4c00003 
+	gpio-510 (Unrequested         ) southwest-96  	out  low  offset:0x5c30 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00000 
+	gpio-511 (Unrequested         ) southwest-97  	out  low  offset:0x5c38 mux:1 	disabled   IntSel:0 	 ctrl0: 0x10000    ctrl1: 0x4c00020 
