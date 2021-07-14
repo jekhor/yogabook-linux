@@ -23,3 +23,6 @@
 [submodule "yogabook-support"]
 	path = yogabook-support
 	url = https://github.com/jekhor/yogabook-support.git
+[submodule "iio-sensor-proxy"]
+	path = iio-sensor-proxy
+	url = https://gitlab.freedesktop.org/jekhor/iio-sensor-proxy.git
