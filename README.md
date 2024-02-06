@@ -29,6 +29,9 @@ I personally use Debian, so the instructions below describe its installation.
 Ubuntu should also be compatible. For other distributions, you may need to
 download and build packages from the source.
 
+Instructions are approximate, details may vary. Please create an issue if
+something goes wrong.
+
 ### OS Installation
 
 1. Download an ISO image and write it to a USB flash drive (refer to
@@ -56,3 +59,12 @@ download and build packages from the source.
     `sudo apt remove linux-image-<version>` command.
 12. The touch keyboard should now be operational, allowing you to detach
     the OTG hub and enjoy your Yoga Book.
+
+### Troubleshooting
+
+Known issues:
+- Camera and vibration force-feedback don't work.
+- alsa-lib (libasound2 package in Debian/Ubuntu) should has version >= 1.2.9
+- To have automatic screen rotation working, it should be supported by desktop
+  environment. Try Gnome first.
+
