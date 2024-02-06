@@ -60,11 +60,13 @@ something goes wrong.
 12. The touch keyboard should now be operational, allowing you to detach
     the OTG hub and enjoy your Yoga Book.
 
-### Troubleshooting
+## Troubleshooting
 
 Known issues:
 - Camera and vibration force-feedback don't work.
 - alsa-lib (libasound2 package in Debian/Ubuntu) should has version >= 1.2.9
 - To have automatic screen rotation working, it should be supported by desktop
   environment. Try Gnome first.
+- My Yoga Book randomly freezes after some time. If you have the same behavior,
+  let me know.
 
