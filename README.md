@@ -5,9 +5,10 @@ on Lenovo Yoga Book tablets (YB1-X91L/F, YB1-X90L/F).
 
 ## Status
 
-Currently, it works on YB1-X91 models only (originally equipped with Windows
-OS). Hans de Goede (@jwrdegoede) has contributed significantly to running Linux
-on the Android variants of the tablet, but this has not been tested.
+Instructions are for YB1-X91 (Windows) models. Android (YB1-X90) version should works
+also, with some exception (check the Issues). To boot from USB, enable USB host and
+disable Secure Boot as described here:
+https://web.archive.org/web/20220516142318/https://poz1.com/windows-on-android-lenovo-yogabook/
 
 Most of the hardware is functional, with the following exceptions:
 - Cameras
@@ -36,7 +37,7 @@ something goes wrong.
 
 1. Download an ISO image and write it to a USB flash drive (refer to
    [Debian's official site](https://debian.org/) for instructions).
-2. Connect a powered microUSB OTG hub to the tablet.
+2. Connect a powered microUSB OTG hub to the tablet (non-powered may works also, let's try).
 3. Connect the USB flash drive and a keyboard to the hub.
 4. Power on the tablet while holding the Volume Up key.
 5. Select the USB drive in the boot menu.
@@ -46,7 +47,7 @@ something goes wrong.
 7. Download the latest `.deb` packages (check the Tags section in this repository):
    - `linux-image`
    - `touch-keyboard`
-   - `yogabook-support`
+   - `yogabook-support` (use a *.ubuntu version if you install an Ubuntu)
    - `alsa-ucm-conf-yogabook`
 8. Open a terminal emulator, navigate to the directory containing the `.deb`
    files, and install them using the command `sudo dpkg -i --force-depends *.deb`.
