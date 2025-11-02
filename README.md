@@ -65,8 +65,7 @@ something goes wrong.
 ## Troubleshooting
 
 Known issues:
-- Camera and vibration force-feedback don't work.
-- alsa-lib (libasound2 package in Debian/Ubuntu) should has version >= 1.2.9
+- Camera doesn't work.
 - To have automatic screen rotation working, it should be supported by desktop
   environment. Try Gnome first.
 - My Yoga Book randomly freezes after some time. If you have the same behavior,
