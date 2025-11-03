@@ -36,15 +36,17 @@ something goes wrong.
 ### Repositories
 
 If you want to use a prepackaged repository, there are repositories available for Arch Linux
-(and derivatives) and Debian/Ubuntu (and derivatives).
+(and derivatives), Debian (and derivatives) and Ubuntu (and derivatives).
 
 For Arch Linux you can check [here](https://arch.yogabook.ulbricht.casa).  
-For Debian it is available [here](https://debian.yogebook.ulbricht.casa).
+For Debian it is available [here](https://debian.yogabook.ulbricht.casa).  
+For Ubuntu it is available [here](https://ubuntu.yogabook.ulbricht.casa/).
 
 The packages are build by [Imanuel Ulbricht](https://github.com/DerKnerd), the build scripts can be found
 [here](https://gitlab.imanuel.dev/packages/yogabook/building/apt-build) for Debian/Ubuntu and 
 [here](https://gitlab.imanuel.dev/packages/yogabook/building/pacman-build) for Arch Linux. The package repos 
-are found [here](https://gitlab.imanuel.dev/packages/yogabook/repos/debian) for Debian/Ubuntu and 
+are found [here](https://gitlab.imanuel.dev/packages/yogabook/repos/debian) for Debian, 
+[here](https://gitlab.imanuel.dev/packages/yogabook/repos/ubuntu) for Ubuntu and 
 [here](https://gitlab.imanuel.dev/packages/yogabook/repos/arch) for Arch Linux.
 
 If you want to use a different distro like Fedora or Alpine, please comment
