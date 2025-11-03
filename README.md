@@ -47,19 +47,19 @@ something goes wrong.
 7. Download the latest `.deb` packages (check the Tags section in this repository):
    - `linux-image`
    - `touch-keyboard`
-   - `yogabook-support` (use a *.ubuntu version if you install an Ubuntu)
+   - `yogabook-support`
    - `alsa-ucm-conf-yogabook`
 8. Open a terminal emulator, navigate to the directory containing the `.deb`
    files, and install them using the command `sudo dpkg -i --force-depends *.deb`.
-   For Debian, install firmware packages also: `sudo apt install firmware-intel-sound firmware-brcm80211`.
 10. Resolve any missing dependencies with the command `sudo apt -f install`.
-11. Reboot. Verify that the new kernel is in use with the command `uname -a`
+11. For Debian, install firmware packages also: `sudo apt install firmware-intel-sound firmware-brcm80211`.
+12. Reboot. Verify that the new kernel is in use with the command `uname -a`
     (the output should include 'yogabook' in the version).
-12. If the system has a newer kernel than the one you downloaded, reboot again,
+13. If the system has a newer kernel than the one you downloaded, reboot again,
     select the Yoga Book kernel from the boot menu, and verify that it boots
     successfully. After this, remove the default kernel from the system with
     `sudo apt remove linux-image-<version>` command.
-13. The touch keyboard should now be operational, allowing you to detach
+14. The touch keyboard should now be operational, allowing you to detach
     the OTG hub and enjoy your Yoga Book.
 
 ## Troubleshooting
