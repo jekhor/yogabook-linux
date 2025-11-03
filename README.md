@@ -33,6 +33,23 @@ download and build packages from the source.
 Instructions are approximate, details may vary. Please create an issue if
 something goes wrong.
 
+### Repositories
+
+If you want to use a prepackaged repository, there are repositories available for Arch Linux
+(and derivatives) and Debian/Ubuntu (and derivatives).
+
+For Arch Linux you can check [here](https://arch.yogabook.ulbricht.casa).  
+For Debian it is available [here](https://debian.yogebook.ulbricht.casa).
+
+The packages are build by [Imanuel Ulbricht](https://github.com/DerKnerd), the build scripts can be found
+[here](https://gitlab.imanuel.dev/packages/yogabook/building/apt-build) for Debian/Ubuntu and 
+[here](https://gitlab.imanuel.dev/packages/yogabook/building/pacman-build) for Arch Linux. The package repos 
+are found [here](https://gitlab.imanuel.dev/packages/yogabook/repos/debian) for Debian/Ubuntu and 
+[here](https://gitlab.imanuel.dev/packages/yogabook/repos/arch) for Arch Linux.
+
+If you want to use a different distro like Fedora or Alpine, please comment
+[this](https://github.com/jekhor/yogabook-linux/issues/54) issue.
+
 ### OS Installation
 
 1. Download an ISO image and write it to a USB flash drive (refer to
