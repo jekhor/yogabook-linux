@@ -44,10 +44,8 @@ For Ubuntu it is available [here](https://ubuntu.yogabook.ulbricht.casa/).
 
 The packages are build by [Imanuel Ulbricht](https://github.com/DerKnerd), the build scripts can be found
 [here](https://gitlab.imanuel.dev/packages/yogabook/building/apt-build) for Debian/Ubuntu and 
-[here](https://gitlab.imanuel.dev/packages/yogabook/building/pacman-build) for Arch Linux. The package repos 
-are found [here](https://gitlab.imanuel.dev/packages/yogabook/repos/debian) for Debian, 
-[here](https://gitlab.imanuel.dev/packages/yogabook/repos/ubuntu) for Ubuntu and 
-[here](https://gitlab.imanuel.dev/packages/yogabook/repos/arch) for Arch Linux.
+[here](https://gitlab.imanuel.dev/packages/yogabook/building/pacman-build) for Arch Linux. The package repo 
+is found [here](https://packages.ulbricht.casa/linux-yogabook/-/packages).
 
 If you want to use a different distro like Fedora or Alpine, please comment
 [this](https://github.com/jekhor/yogabook-linux/issues/54) issue.
