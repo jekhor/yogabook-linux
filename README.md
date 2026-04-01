@@ -13,7 +13,6 @@ https://web.archive.org/web/20220516142318/https://poz1.com/windows-on-android-l
 Most of the hardware is functional, with the following exceptions:
 - Cameras
 - LTE modem (in L modifications of the tablet)
-- Keyboard vibration feedback
 
 Most Linux patches have been mainlined, except for the sound drivers.
 
