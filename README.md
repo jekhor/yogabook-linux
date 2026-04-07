@@ -35,18 +35,24 @@ something goes wrong.
 ### Repositories
 
 If you want to use a prepackaged repository, there are repositories available for Arch Linux
-(and derivatives), Debian (and derivatives) and Ubuntu (and derivatives).
+(and derivatives), Debian (and derivatives), Ubuntu (and derivatives) and Alpine Linux (and derivatives).
 
-For Arch Linux you can check [here](https://arch.yogabook.ulbricht.casa).  
-For Debian it is available [here](https://debian.yogabook.ulbricht.casa).  
-For Ubuntu it is available [here](https://ubuntu.yogabook.ulbricht.casa/).
+Check the Wiki on how to install it using the repositories on your system. Currently supported are:
 
-The packages are build by [Imanuel Ulbricht](https://github.com/DerKnerd), the build scripts can be found
-[here](https://gitlab.imanuel.dev/packages/yogabook/building/apt-build) for Debian/Ubuntu and 
-[here](https://gitlab.imanuel.dev/packages/yogabook/building/pacman-build) for Arch Linux. The package repo 
-is found [here](https://packages.ulbricht.casa/linux-yogabook/-/packages).
+- Ubuntu 24.04, 25.10 and 26.04
+- Debian Trixie, Forky, Testing and Sid
+- Arch Linux
+- Alpine Linux
 
-If you want to use a different distro like Fedora or Alpine, please comment
+Check these links for the build scripts:
+
+- [Debian/Ubuntu](https://gitlab.imanuel.dev/packages/yogabook/building/apt-build)
+- [Arch Linux](https://gitlab.imanuel.dev/packages/yogabook/building/pacman-build)
+- [Alpine Linux](https://gitlab.imanuel.dev/packages/yogabook/building/apk-build)
+
+The package repo is found [here](https://packages.ulbricht.casa/linux-yogabook/-/packages).
+
+If you want to use a different distro like Fedora, please comment
 [this](https://github.com/jekhor/yogabook-linux/issues/54) issue.
 
 ### OS Installation
