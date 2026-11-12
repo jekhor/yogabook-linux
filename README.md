@@ -87,7 +87,23 @@ If you want to use a different distro like Fedora, please comment
 ## Troubleshooting
 
 Known issues:
-- Camera doesn't work.
+- Cameras don't work out of the box on the YB1-X91F: `atomisp` registers its
+  video nodes from the completion callback of its v4l2-async notifier, which
+  only fires once every ACPI-declared sensor is bound. The front OVTI2740
+  firmware reports `CsiLanes=1`, so `ov2740` rejects it with `-EINVAL`, the
+  notifier never completes and no video node is created at all - the healthy
+  rear OV8858 is dragged down with it. A DMI-scoped `CsiLanes` override for
+  this sensor exists in "[PATCH v5 07/16] media: atomisp: Add Yoga Book camera
+  configuration" (pending), but it only matches `Lenovo YB1-X91L`; the
+  YB1-X91F needs its own entry - a single-entry patch is linked from the PR
+  that adds this note:
+  https://gist.github.com/KanzakiK/855d64dd8484304fb49181247c6d0280
+  - Neither sensor has 3A (no automatic exposure / white balance): frames come
+    out dark (Y around 20) and green-tinted; the YU12 output needs software
+    white balance plus a level stretch.
+  - The front sensor returns garbage on the first streaming session after each
+    boot; a second start/stop cycle gives a proper image.
+  - Verified on a YB1-X91F; the YB1-X91L was not tested.
 - To have automatic screen rotation working, it should be supported by desktop
   environment. Try Gnome first.
 - My Yoga Book randomly freezes after some time. If you have the same behavior,
