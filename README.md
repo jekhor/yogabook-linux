@@ -98,11 +98,13 @@ Known issues:
   YB1-X91F needs its own entry - a single-entry patch is linked from the PR
   that adds this note:
   https://gist.github.com/KanzakiK/855d64dd8484304fb49181247c6d0280
-  - Neither sensor has automatic 3A. Manual controls do work, but they must be
-    applied while streaming (the sensor drivers gate `s_ctrl` on runtime PM):
-    the front OV2740 has working `analogue_gain` and `red_balance` /
-    `blue_balance`; the rear OV8858 has working exposure/analogue gain and a
-    digital gain at register `0x350a` (0.25x steps, 1x = `0x04`, max 3.75x).
+  - Automatic 3A is not enabled in this stack: the sensor drivers expose
+    manual controls only. Manual controls do work, but they must be applied
+    while streaming (the sensor drivers gate `s_ctrl` on runtime PM): the
+    front OV2740 has working `analogue_gain` and `red_balance` /
+    `blue_balance`; the rear OV8858 has working exposure/analogue gain, and
+    its digital gain register `0x350a` (0.25x steps, 1x = `0x04`, max 3.75x)
+    is usable with the driver fix linked from the PR.
   - On the rear OV8858 the MWB red/blue balance registers do not affect its
     RAW10 output, so the rear stays green-tinted and needs post-processing
     (or display-side colour correction). The front can be white-balanced in
