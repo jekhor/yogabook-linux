@@ -87,30 +87,16 @@ If you want to use a different distro like Fedora, please comment
 ## Troubleshooting
 
 Known issues:
-- Cameras don't work out of the box on the YB1-X91F: `atomisp` registers its
-  video nodes from the completion callback of its v4l2-async notifier, which
-  only fires once every ACPI-declared sensor is bound. The front OVTI2740
-  firmware reports `CsiLanes=1`, so `ov2740` rejects it with `-EINVAL`, the
-  notifier never completes and no video node is created at all - the healthy
-  rear OV8858 is dragged down with it. A DMI-scoped `CsiLanes` override for
-  this sensor exists in "[PATCH v5 07/16] media: atomisp: Add Yoga Book camera
-  configuration" (pending), but it only matches `Lenovo YB1-X91L`; the
-  YB1-X91F needs its own entry - a single-entry patch is linked from the PR
-  that adds this note:
-  https://gist.github.com/KanzakiK/855d64dd8484304fb49181247c6d0280
-  - Automatic 3A is not enabled in this stack: the sensor drivers expose
-    manual controls only. Manual controls do work, but they must be applied
-    while streaming (the sensor drivers gate `s_ctrl` on runtime PM): the
-    front OV2740 has working `analogue_gain` and `red_balance` /
-    `blue_balance`; the rear OV8858 has working exposure/analogue gain, and
-    its digital gain register `0x350a` (0.25x steps, 1x = `0x04`, max 3.75x)
-    is usable with the driver fix linked from the PR.
-  - On the rear OV8858 the MWB red/blue balance registers do not affect its
-    RAW10 output, so the rear stays green-tinted and needs post-processing
-    (or display-side colour correction). The front can be white-balanced in
-    the driver.
-  - The front sensor returns garbage on the first streaming session after each
-    boot; a second start/stop cycle gives a proper image.
+- Cameras don't work out of the box on the YB1-X91F. Four independent layers
+  are involved: a missing DMI entry prevents any `/dev/video*` node from being
+  created, an atomisp subdev ioctl bug makes GStreamer-based camera apps hang
+  while probing, a PipeWire spa-v4l2 buffer-negotiation bug prevents streaming,
+  and the rear sensor has resolution/colour limits (8MP is not usable, no
+  automatic 3A). Root causes, patches and the current status are documented in
+  [doc/camera/YB1-X91F.md](doc/camera/YB1-X91F.md).
+  - The front sensor still returns garbage on the first streaming session after
+    each boot; a second start/stop cycle gives a proper image - see
+    <https://github.com/jekhor/yogabook-linux/issues/80>.
   - Verified on a YB1-X91F; the YB1-X91L was not tested.
 - To have automatic screen rotation working, it should be supported by desktop
   environment. Try Gnome first.
