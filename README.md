@@ -87,7 +87,17 @@ If you want to use a different distro like Fedora, please comment
 ## Troubleshooting
 
 Known issues:
-- Camera doesn't work.
+- Cameras don't work out of the box on the YB1-X91F. Four independent layers
+  are involved: a missing DMI entry prevents any `/dev/video*` node from being
+  created, an atomisp subdev ioctl bug makes GStreamer-based camera apps hang
+  while probing, a PipeWire spa-v4l2 buffer-negotiation bug prevents streaming,
+  and the rear sensor has resolution/colour limits (8MP is not usable, no
+  automatic 3A). Root causes, patches and the current status are documented in
+  [doc/camera/YB1-X91F.md](doc/camera/YB1-X91F.md).
+  - The front sensor still returns garbage on the first streaming session after
+    each boot; a second start/stop cycle gives a proper image - see
+    <https://github.com/jekhor/yogabook-linux/issues/80>.
+  - Verified on a YB1-X91F; the YB1-X91L was not tested.
 - To have automatic screen rotation working, it should be supported by desktop
   environment. Try Gnome first.
 - My Yoga Book randomly freezes after some time. If you have the same behavior,
