@@ -98,9 +98,15 @@ Known issues:
   YB1-X91F needs its own entry - a single-entry patch is linked from the PR
   that adds this note:
   https://gist.github.com/KanzakiK/855d64dd8484304fb49181247c6d0280
-  - Neither sensor has 3A (no automatic exposure / white balance): frames come
-    out dark (Y around 20) and green-tinted; the YU12 output needs software
-    white balance plus a level stretch.
+  - Neither sensor has automatic 3A. Manual controls do work, but they must be
+    applied while streaming (the sensor drivers gate `s_ctrl` on runtime PM):
+    the front OV2740 has working `analogue_gain` and `red_balance` /
+    `blue_balance`; the rear OV8858 has working exposure/analogue gain and a
+    digital gain at register `0x350a` (0.25x steps, 1x = `0x04`, max 3.75x).
+  - On the rear OV8858 the MWB red/blue balance registers do not affect its
+    RAW10 output, so the rear stays green-tinted and needs post-processing
+    (or display-side colour correction). The front can be white-balanced in
+    the driver.
   - The front sensor returns garbage on the first streaming session after each
     boot; a second start/stop cycle gives a proper image.
   - Verified on a YB1-X91F; the YB1-X91L was not tested.
